@@ -18,19 +18,19 @@ This project implements a lexer and parser for a simple programming language usi
 ## Project Structure
 ```bash
 MyParser
-├── bin/              # Compiled .class files directory
-├── src/              # Source code files
-│   ├── Lexical.java
-│   ├── Main.java
-│   ├── Parser.java
-│   └── ParserVal.java
-├── lib/              # External libraries
+├── bin/               # Compiled .class files directory
+├── src/               # Source code files
+│   ├── Lexical.java   # Jflex generated Lexer
+│   ├── Main.java      # Man class that reads input.txt and starts execution
+│   ├── Parser.java    # BYaac/J generated parser class
+│   └── ParserVal.java # BYacc/J generated parserVal class
+├── lib/               # External libraries
 │   └── jflex-full-1.9.1.jar
-├── lexer.jflex       # JFlex lexer definition file
-├── parser.y          # BYacc/J parser definition file
-├── jflex/            # JFlex executable script
-├── yacc/             # BYacc/J executable
-└── input.txt         # Sample input file
+├── lexer.jflex        # JFlex lexer definition file
+├── parser.y           # BYacc/J parser definition file
+├── jflex/             # JFlex executable script
+├── yacc/              # BYacc/J executable
+└── input.txt          # Sample programm input file
 ```
 
 ## Prerequisites
