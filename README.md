@@ -6,14 +6,14 @@ This project implements a lexer and parser for a simple programming language usi
 
 - **Lexer**: [JFlex](https://jflex.de/) (version 1.9.1)
 - **Parser**: [BYacc/J](https://byaccj.sourceforge.net) (version 1.15)
-- **Programming Language**: Java (JDK 17 or higher)
+- **Programming Language**: Java (JDK 17 or higher). [Download JDK from Oracle](https://www.oracle.com/java/technologies/javase-downloads.html)
 
 ## Features
 
-- **Lexical Analysis**: JFlex is used to identify tokens such as keywords, operators, identifiers, and literals.
+- **Lexical Analysis**: JFlex identifies tokens such as keywords, operators, identifiers, and literals.
 - **Syntax Analysis**: BYacc/J validates code structure and builds a parse tree.
 - **Support for Basic Operations**: Includes handling of arithmetic and logical expressions.
-- **Error Handling**: Catches unrecognized characters and syntax errors.
+- **Error Handling**: Catches unrecognized characters and syntax errors, providing feedback to the user.
 
 ## Project Structure
 ```bash
@@ -28,7 +28,7 @@ MyParser
 │   └── jflex-full-1.9.1.jar
 ├── lexer.jflex       # JFlex lexer definition file
 ├── parser.y          # BYacc/J parser definition file
-├── jflex/            # JFlex executable scribt
+├── jflex/            # JFlex executable script
 ├── yacc/             # BYacc/J executable
 └── input.txt         # Sample input file
 ```
@@ -37,13 +37,19 @@ MyParser
 
 Ensure you have the following installed:
 
-- **Java Development Kit (JDK)** 17 or higher. [Download here](https://www.oracle.com/java/technologies/javase-downloads.html)
-- **JFlex** version 1.9.1. [Download here](https://jflex.de/)
-- **BYacc/J** version 1.9. [Download here](https://byaccj.sourceforge.net)
+- **Java Development Kit (JDK)** 17 or higher.
+- **JFlex** version 1.9.1.
+- **BYacc/J** version 1.15.
+
+### Installation Notes
+
+- Compile the BYacc/J using the provided Makefile **Note: The MakeFile needs to be modified based on your machine**. Ensure the `yacc` executable is added to your system path or project folder.
+- Add the `jflex-full-1.9.1.jar` to the `lib` folder.
+- Add the `jflex` executable to your system path or project folder. You can check if it’s properly set up by running `jflex -version`.
 
 ---
 
-## ***Project Setup Instructions***
+# Project Setup Instructions
 
 ## 1. Clone the Repository
 
@@ -52,11 +58,11 @@ git clone https://github.com/yourusername/your-repo-name.git
 cd your-repo-name
 ```
 
-## 2. Add JFlex and BYacc/J to the project
+## 2. Add JFlex and BYacc/J to the Project
 
-- Compile the BYacc/J using MakeFile and add `yacc` executable to the folder or system paths.
-- Add the `jflex-full-1.9.1.jar` to the lib folder.
-- Add the `jflex` executable to the folder or system paths.
+- Ensure that the `yacc` executable is in your path.
+- Add the `jflex-full-1.9.1.jar` file to the `lib` folder.
+- Add the `jflex` executable to your path.
 
 ## 3. Generate Lexer and Parser Files
 
@@ -65,7 +71,7 @@ cd your-repo-name
 Run JFlex on the lexer definition file (`lexer.jflex`) to generate the `Lexical.java` file.
 
 ```bash
-java -jar jflex-full-1.9.1.jar lexer.jflex -d src
+java -jar lib/jflex-full-1.9.1.jar lexer.jflex -d src
 ```
 
 ### Generate Parser
@@ -88,15 +94,22 @@ javac -d bin -cp src/*.java
 
 ### Run the Main Program
 
-After compilation, you can execute the main program with the following command:
+After compilation, execute the main program with the following command:
 
 ```bash
 java -cp bin Main
 ```
 
-The `input.txt` will be read inside the `Main`, tokenizes it with the lexer, and parses it with the parser.
+The program will read from `input.txt`, tokenize it with the lexer, and parse it with the parser. 
 
 ### Modify Input
 
-To test different inputs, edit `input.txt` with the code you wish to analyze.
+To test different inputs, edit `input.txt` with the code you wish to analyze. If there are syntax errors or unrecognized characters, the program will provide relevant feedback.
 
+## License
+
+[Include your license information here, if applicable.]
+
+## Contribution Guidelines
+
+[Add contribution guidelines if you would like others to contribute to your project.]
