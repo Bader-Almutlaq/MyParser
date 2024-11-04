@@ -105,11 +105,3 @@ The program will read from `input.txt`, tokenize it with the lexer, and parse it
 ### Modify Input
 
 To test different inputs, edit `input.txt` with the code you wish to analyze. If there are syntax errors or unrecognized characters, the program will provide relevant feedback.
-
-## License
-
-[Include your license information here, if applicable.]
-
-## Contribution Guidelines
-
-[Add contribution guidelines if you would like others to contribute to your project.]
