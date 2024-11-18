@@ -15,27 +15,41 @@ Program:
     ;
 
 Declaration:
-      DEF IDENTIFIER LPAREN Args RPAREN EQUAL Expression
+      DEF IDENTIFIER LPAREN Args RPAREN EQUAL Expression_0
     ;
 
 Args:
       IDENTIFIER COMMA Args
     | IDENTIFIER
-    | /* empty */
     ;
 
-Expression:
-    INTEGER
-  | IDENTIFIER
-  | IF Expression OP Expression THEN Expression ELSE Expression
-  | REPEAT Expression UNTIL Expression
-  | Expression PLUS Expression
-  | Expression MINUS Expression
-  | Expression MULTIPLY Expression
-  | Expression DIVIDE Expression
-  | IDENTIFIER LPAREN ArgList RPAREN
+Expression_0:
+    IF Expression_0 OP Expression_0 THEN Expression_0 ELSE Expression_0
+  | REPEAT Expression_0 UNTIL Expression_0
+  | IDENTIFIER LPAREN ArgExpressions RPAREN
   ;
 
+Expression_1:
+    Expression_1 PLUS Expression_2
+  | Expression_1 MINUS Expression_2
+  | Expression_2
+  ;
+
+Expression_2:
+    Expression_2 MULTIPLY Expression_3
+  | Expression_2 DIVIDE Expression_3
+  | Expression_3
+  ;
+
+Expression_3:
+    INTEGER
+  | IDENTIFIER
+
+ArgExpressions:
+    Expression_0 COMMA ArgExpressions
+  | Expression_0
+
+  
 ArgList:
       Expression COMMA ArgList
     | Expression
