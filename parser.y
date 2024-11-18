@@ -51,8 +51,8 @@ ArgExpressions:
 
   
 ArgList:
-      Expression COMMA ArgList
-    | Expression
+      IDENTIFIER COMMA ArgList
+    | IDENTIFIER
     | /* empty */
     ;
 OP:
