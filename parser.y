@@ -26,8 +26,7 @@ Args:
 Expression_0:
     IF Expression_0 OP Expression_0 THEN Expression_0 ELSE Expression_0
   | REPEAT Expression_0 UNTIL Expression_0
-  | IDENTIFIER LPAREN ArgExpressions RPAREN
-    Expression_1
+  | Expression_1
   ;
 
 Expression_1:
@@ -45,10 +44,13 @@ Expression_2:
 Expression_3:
     INTEGER
   | IDENTIFIER
+  | IDENTIFIER LPAREN ArgExpressions RPAREN
+  ;
 
 ArgExpressions:
     Expression_0 COMMA ArgExpressions
   | Expression_0
+  ;
 
   
 ArgList:
