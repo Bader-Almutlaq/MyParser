@@ -18,6 +18,7 @@ public class Main {
             Parser parser = new Parser(lexer);
 
             // Begin parsing
+            System.out.println("\n");
             int result = parser.yyparse();
 
             if (result == 0) {
